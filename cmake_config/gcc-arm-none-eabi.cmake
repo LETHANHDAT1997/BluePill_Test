@@ -23,12 +23,14 @@ set(PATH_LINKER_FILE "${CMAKE_SOURCE_DIR}/mcu_config_init/STM32F103C8Tx_FLASH.ld
 
 
 # Đặt các trình biên dịch cho C, C++, và các công cụ liên quan đến ARM
-set(CMAKE_C_COMPILER                "C:/Arm_GNU_Toolchain/1331/bin/arm-none-eabi-gcc.exe")     
-set(CMAKE_ASM_COMPILER              "C:/Arm_GNU_Toolchain/1331/bin/arm-none-eabi-gcc.exe")     
-set(CMAKE_CXX_COMPILER              "C:/Arm_GNU_Toolchain/1331/bin/arm-none-eabi-g++.exe")    
-set(CMAKE_LINKER                    "C:/Arm_GNU_Toolchain/1331/bin/arm-none-eabi-g++.exe")    
-set(CMAKE_OBJCOPY                   "C:/Arm_GNU_Toolchain/1331/bin/arm-none-eabi-objcopy.exe") 
-set(CMAKE_SIZE                      "C:/Arm_GNU_Toolchain/1331/bin/arm-none-eabi-size.exe")   
+set(CMAKE_C_COMPILER                "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc")
+set(CMAKE_ASM_COMPILER              "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc")
+set(CMAKE_CXX_COMPILER              "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-g++")
+set(CMAKE_LINKER                    "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-g++")
+set(CMAKE_OBJCOPY                   "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-objcopy")
+set(CMAKE_OBJDUMP                   "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-objdump")
+set(CMAKE_SIZE                      "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-size")
+set(CMAKE_READELF                   "/home/ledat/Public/Arm_GNU_Cross_Compiler/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-readelf")
 
 
 
