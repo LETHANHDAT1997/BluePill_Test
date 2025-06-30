@@ -16,6 +16,7 @@ add_library(
         STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
         STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
         STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
+        STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
 )
 
 # Thêm các thư mục header cần thiết vào thư viện Lib_Drivers

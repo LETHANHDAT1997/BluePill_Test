@@ -58,7 +58,7 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g") # Thêm cờ debug cho C
 
 
 # Kích hoạt hỗ trợ cho các ngôn ngữ ASM, C và C++
-enable_language(C ASM)
+enable_language(C CXX ASM)
 
 
 

@@ -7,6 +7,7 @@ add_library(
         Src/syscalls.c
         Src/sysmem.c
         Src/system_stm32f1xx.c
+        Src/nrf24l01p_improved.c
 )
 
 # Thêm các thư mục header cần thiết vào thư viện Lib_Core
