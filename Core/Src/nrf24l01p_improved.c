@@ -118,6 +118,61 @@ static nrf24l01p_status_t write_register(uint8_t reg, uint8_t value)
     return NRF24L01P_OK;
 }
 
+/* Initialize IRQ for RF24L01 */
+static nrf24l01p_status_t nrf24l01p_irq_init(void) 
+{
+#if NRF24L01P_IRQ_ENABLE == 1
+    // Thiết lập callback cho ngắt (cả rising và falling edge)
+    int status = gpioSetAlertFunc(NRF24L01P_IRQ_GPIO, nrf24l01p_callback);
+    if (status < 0) 
+    {
+        return NRF24L01P_ERR_SPI;
+    }
+#endif
+    return NRF24L01P_OK;
+}
+
+/* 
+    Callback function for RF24L01 
+    Depending on the library system, there will be different types of callback functions.
+*/
+#if NRF24L01P_IRQ_ENABLE == 1
+static void nrf24l01p_callback(int gpio, int level, uint32_t tick) 
+{
+    if (gpio == NRF24L01P_IRQ_GPIO && level == 0) 
+    {
+        uint8_t rx_payload[RX_PAYLOAD_SIZE];
+        nrf24l01p_status_t status = nrf24l01p_rx_irq(rx_payload);
+        if (status == NRF24L01P_OK) 
+        {
+            printf("Received data: ");
+            for (int i = 0; i < RX_PAYLOAD_SIZE; i++)
+            {
+                printf("%02X ", rx_payload[i]);
+            }
+            printf("\n");
+        } 
+        else 
+        {
+            printf("Failed to receive data\n");
+        }
+    }
+}
+#endif
+
+/* Initialize SPI and GPIO */
+nrf24l01p_status_t nrf24l01p_spi_init(void) 
+{
+   
+}
+
+/* Deinitialize SPI and GPIO */
+void nrf24l01p_spi_deinit(void) 
+{
+
+}
+
+
 /* Main Functions */
 nrf24l01p_status_t nrf24l01p_rx_init(nrf24l01p_rf_channel_t channel,
                                      nrf24l01p_data_rate_t data_rate,

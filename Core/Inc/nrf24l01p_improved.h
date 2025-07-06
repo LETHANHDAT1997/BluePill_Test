@@ -13,6 +13,7 @@ extern SPI_HandleTypeDef hspi1;
 #define NRF24L01P_CE_PIN                     GPIO_PIN_0 ///< GPIO pin for Chip Enable
 #define NRF24L01P_IRQ_PORT                   GPIOA    ///< GPIO port for IRQ
 #define NRF24L01P_IRQ_PIN                    GPIO_PIN_8 ///< GPIO pin for IRQ
+#define NRF24L01P_IRQ_ENABLE                 0         ///< Enable IRQ (1 to enable, 0 to disable)
 #define NRF24L01P_DEFAULT_STATIC_PAYLOAD_BYTES 8      ///< Default static payload length (1-32 bytes)
 
 /* nRF24L01+ Commands */
